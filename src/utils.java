@@ -33,6 +33,18 @@ public class utils {
         System.out.printf(str, args);
     }
 
+    public static void printstrarray(String[] liststring) {
+        // Mencetak semua elemen dalam array of strings
+        for (int i=0; i < liststring.length; i++) {
+            printlnstr(liststring[i]);
+        }
+    }
+
+    public static boolean isDivisible(int a, int b) {
+        // Menentukan apakah a habis dibagi dengan b
+        return (a % b == 0);
+    }
+
     public static int[] RandomNumbers() {
         // Meng-generate angka 1-13 dengan urutan acak dalam sebuah array
         ArrayList numberlist = new ArrayList();
