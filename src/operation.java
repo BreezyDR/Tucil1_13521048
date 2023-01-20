@@ -3,36 +3,43 @@ public class operation extends utils {
         String[] solutionList = {};
         
         // Penjumlahan & pengurangan
+
+        // +, +, +
         if (a + b + c + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") + " + c + ") + " + d);
             solutionList = concatStr(solutionList, "(" + a + " + (" + b + " + " + c + ")) + " + d);
             solutionList = concatStr(solutionList,"(" + a + " + " + b + ") + (" + c + " + " + d + ")");
             solutionList = concatStr(solutionList, a + " + ((" + b + " + " + c + ") + " + d + ")");
         }
+        // +, +, -
         if (a + b + c - d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") + " + c + ") - " + d);
             solutionList = concatStr(solutionList, "(" + a + " + (" + b + " + " + c + ")) - " + d);
             solutionList = concatStr(solutionList, "(" + a + " + " + b + ") + (" + c + " - " + d + ")");
             solutionList = concatStr(solutionList, a + " + ((" + b + " + " + c + ") - " + d + ")");
         }
+        // +, -, +
         if (a + b - c + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") - " + c + ") + " + d);
             solutionList = concatStr(solutionList, "(" + a + " + (" + b + " - " + c + ")) + " + d);
             solutionList = concatStr(solutionList, "(" + a + " + " + b + ") - (" + c + " - " + d + ")");
             solutionList = concatStr(solutionList, a + " + ((" + b + " - " + c + ") + " + d + ")");
         }
+        // -, +, +
         if (a - b + c + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " - " + b + ") + " + c + ") + " + d);
             solutionList = concatStr(solutionList, "(" + a + " - (" + b + " - " + c + ")) + " + d);
             solutionList = concatStr(solutionList, "(" + a + " - " + b + ") + (" + c + " + " + d + ")");
             solutionList = concatStr(solutionList, a + " - ((" + b + " - " + c + ") - " + d + ")");
         }
+        // +, -, -
         if (a + b - c - d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") - " + c + ") - " + d);
             solutionList = concatStr(solutionList, "(" + a + " + (" + b + " - " + c + ")) - " + d);
             solutionList = concatStr(solutionList, "(" + a + " + " + b + ") - (" + c + " + " + d + ")");
             solutionList = concatStr(solutionList, a + " + ((" + b + " - " + c + ") - " + d + ")");
         }
+        // -, +, -
         if (a - b + c - d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " - " + b + ") + " + c + ") - " + d);
             solutionList = concatStr(solutionList, "(" + a + " - (" + b + " - " + c + ")) - " + d);
@@ -40,12 +47,14 @@ public class operation extends utils {
             solutionList = concatStr(solutionList, a + " - ((" + b + " - " + c + ") + " + d + ")");
 
         }
+        // -, -, +
         if (a - b - c + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " - " + b + ") - " + c + ") + " + d);
             solutionList = concatStr(solutionList, "(" + a + " - (" + b + " + " + c + ")) + " + d);
             solutionList = concatStr(solutionList, "(" + a + " - " + b + ") - (" + c + " - " + d + ")");
             solutionList = concatStr(solutionList, a + " - ((" + b + " + " + c + ") - " + d + ")");
         }
+        // -, -, -
         if (a - b - c - d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " - " + b + ") - " + c + ") - " + d);
             solutionList = concatStr(solutionList, "(" + a + " - (" + b + " + " + c + ")) - " + d);
@@ -55,12 +64,15 @@ public class operation extends utils {
         }
 
         // Semua operasi kecuali pembagian
+
+        // *, *, *
         if (a * b * c * d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " * " + b + ") * " + c + ") * " + d);
             solutionList = concatStr(solutionList, "(" + a + " * (" + b + " * " + c + ")) * " + d);
             solutionList = concatStr(solutionList, "(" + a + " * " + b + ") * (" + c + " * " + d + ")");
             solutionList = concatStr(solutionList, a + " * ((" + b + " * " + c + ") * " + d + ")");
         }
+        // *, *, +
         if ((a * b * c) + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " * " + b + ") * " + c + ") + " + d);
             solutionList = concatStr(solutionList, "(" + a + " * (" + b + " * " + c + ")) + " + d);
@@ -71,6 +83,7 @@ public class operation extends utils {
         if (a * ((b * c) + d) == 24) {
             solutionList = concatStr(solutionList, a + " * ((" + b + " * " + c + ") + " + d + ")");
         }
+        // *, +, *
         if ((a * b + c) * d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " * " + b + ") + " + c + ") * " + d);
         }
@@ -83,6 +96,7 @@ public class operation extends utils {
         if (a * ((b + c) * d) == 24) {
             solutionList = concatStr(solutionList, a + " * ((" + b + " + " + c + ") * " + d + ")");
         }
+        // +, *, *
         if (((a + b) * c) * d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") * " + c + ") * " + d);
         }
@@ -95,6 +109,7 @@ public class operation extends utils {
         if (a + ((b * c) * d) == 24) {
             solutionList = concatStr(solutionList, a + " + ((" + b + " * " + c + ") * " + d + ")");
         }
+        // +, +, *
         if (((a + b) + c) * d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") + " + c + ") * " + d);
             solutionList = concatStr(solutionList, "(" + a + " + (" + b + " + " + c + ")) * " + d);
@@ -105,6 +120,7 @@ public class operation extends utils {
         if (a + ((b + c) * d) == 24) {
             solutionList = concatStr(solutionList, a + " + ((" + b + " + " + c + ") * " + d + ")");
         }
+        // +, *, +
         if (((a + b) * c) + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " + " + b + ") * " + c + ") + " + d);
         }
@@ -117,6 +133,7 @@ public class operation extends utils {
         if (a + ((b * c) + d) == 24) {
             solutionList = concatStr(solutionList, a + " + ((" + b + " * " + c + ") + " + d + ")");
         }
+        // *, +, +
         if (((a * b) + c) + d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " * " + b + ") + " + c + ") + " + d);
         }
@@ -129,7 +146,7 @@ public class operation extends utils {
         if (a * ((b + c) + d) == 24) {
             solutionList = concatStr(solutionList, a + " * ((" + b + " + " + c + ") + " + d + ")");
         }
-        // ...
+        // *, *, -
         if ((a * b * c) - d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " * " + b + ") * " + c + ") - " + d);
             solutionList = concatStr(solutionList, "(" + a + " * (" + b + " * " + c + ")) - " + d);
@@ -140,6 +157,7 @@ public class operation extends utils {
         if (a * ((b * c) - d) == 24) {
             solutionList = concatStr(solutionList, a + " * ((" + b + " * " + c + ") - " + d + ")");
         }
+        // *, -, *
         if ((a * b - c) * d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " * " + b + ") - " + c + ") * " + d);
         }
@@ -152,6 +170,7 @@ public class operation extends utils {
         if (a * ((b - c) * d) == 24) {
             solutionList = concatStr(solutionList, a + " * ((" + b + " - " + c + ") * " + d + ")");
         }
+        // -, *, *
         if (((a - b) * c) * d == 24) {
             solutionList = concatStr(solutionList, "((" + a + " - " + b + ") * " + c + ") * " + d);
         }
@@ -164,7 +183,131 @@ public class operation extends utils {
         if (a - ((b * c) * d) == 24) {
             solutionList = concatStr(solutionList, a + " - ((" + b + " * " + c + ") * " + d + ")");
         }
-        // ...
+        // -, -, *
+        if (((a - b) - c) * d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " - " + b + ") - " + c + ") * " + d);
+        }
+        if ((a - (b - c)) * d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - (" + b + " - " + c + ")) * " + d);
+        }
+        if ((a - b) - (c * d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - " + b + ") - (" + c + " * " + d + ")");
+        }
+        if (a - ((b - c) * d) == 24) {
+            solutionList = concatStr(solutionList, a + " - ((" + b + " - " + c + ") * " + d + ")");
+        }
+        // -, *, -
+        if (((a - b) * c) - d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " - " + b + ") * " + c + ") - " + d);
+        }
+        if ((a - (b * c)) - d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - (" + b + " * " + c + ")) - " + d);
+        }
+        if ((a - b) * (c - d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - " + b + ") * (" + c + " - " + d + ")");
+        }
+        if (a - ((b * c) - d) == 24) {
+            solutionList = concatStr(solutionList, a + " - ((" + b + " * " + c + ") - " + d + ")");
+        }
+        // -, -, *
+        if ((a - b - c) * d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " - " + b + ") - " + c + ") * " + d);
+        }
+        if ((a - (b - c)) * d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - (" + b + " - " + c + ")) * " + d);
+        }
+        if ((a - b) - (c * d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - " + b + ") - (" + c + " * " + d + ")");
+        }
+        if (a - ((b - c) * d) == 24) {
+            solutionList = concatStr(solutionList, a + " - ((" + b + " - " + c + ") * " + d + ")");
+        }
+        // +, -, *
+        if ((a + b - c) * d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " + " + b + ") - " + c + ") * " + d);
+        }
+        if ((a + (b - c)) * d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " + (" + b + " - " + c + ")) * " + d);
+        }
+        if ((a + b) - (c * d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " + " + b + ") - (" + c + " * " + d + ")");
+        }
+        if (a + ((b - c) * d) == 24) {
+            solutionList = concatStr(solutionList, a + " + ((" + b + " - " + c + ") * " + d + ")");
+        }
+        // +, *, -
+        if ((a + b * c) - d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " + " + b + ") * " + c + ") - " + d);
+        }
+        if ((a + (b * c)) - d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " + (" + b + " * " + c + ")) - " + d);
+        }
+        if ((a + b) * (c - d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " + " + b + ") * (" + c + " - " + d + ")");
+        }
+        if (a + ((b * c) - d) == 24) {
+            solutionList = concatStr(solutionList, a + " + ((" + b + " * " + c + ") - " + d + ")");
+        }
+        // *, +, -
+        if (((a * b) + c) - d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " * " + b + ") + " + c + ") - " + d);
+        }
+        if ((a * (b + c)) - d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " * (" + b + " + " + c + ")) - " + d);
+        }
+        if ((a * b) + (c - d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " * " + b + ") + (" + c + " - " + d + ")");
+        }
+        if (a * ((b + c) - d) == 24) {
+            solutionList = concatStr(solutionList, a + " * ((" + b + " + " + c + ") - " + d + ")");
+        }
+        // *, -, +
+        if (((a * b) - c) + d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " * " + b + ") - " + c + ") + " + d);
+        }
+        if ((a * (b - c)) + d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " * (" + b + " - " + c + ")) + " + d);
+        }
+        if ((a * b) - (c + d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " * " + b + ") - (" + c + " + " + d + ")");
+        }
+        if (a * ((b - c) + d) == 24) {
+            solutionList = concatStr(solutionList, a + " * ((" + b + " - " + c + ") + " + d + ")");
+        }
+        // -, *, +
+        if (((a - b) * c) + d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " - " + b + ") * " + c + ") + " + d);
+        }
+        if ((a - (b * c)) + d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - (" + b + " * " + c + ")) + " + d);
+        }
+        if ((a - b) * (c + d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - " + b + ") * (" + c + " + " + d + ")");
+        }
+        if (a - ((b * c) + d) == 24) {
+            solutionList = concatStr(solutionList, a + " - ((" + b + " * " + c + ") + " + d + ")");
+        }
+        // -, +, *
+        if (((a - b) + c) * d == 24) {
+            solutionList = concatStr(solutionList, "((" + a + " - " + b + ") + " + c + ") * " + d);
+        }
+        if ((a - (b + c)) * d == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - (" + b + " + " + c + ")) * " + d);
+        }
+        if ((a - b) + (c * d) == 24) {
+            solutionList = concatStr(solutionList, "(" + a + " - " + b + ") + (" + c + " * " + d + ")");
+        }
+        if (a - ((b + c) * d) == 24) {
+            solutionList = concatStr(solutionList, a + " - ((" + b + " + " + c + ") * " + d + ")");
+        }
+
+        // Operasi termasuk pembagian
+        // a, b, c, d harus diubah menjadi float lalu diubah lagi menjadi int
+
+
+
+
+
         
 
 
