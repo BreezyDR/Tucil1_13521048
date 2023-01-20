@@ -1,10 +1,9 @@
 import java.util.Arrays;
 
-public class testutil extends utils {
+public class testutil extends operation {
     public static void main(String[] args) {
-        String[] solutionList = {"jjj"};
-        String[] j2 = {"hshhsh"};
-        solutionList = mergeArrays(solutionList, j2);
-        printlnstr(Arrays.toString(solutionList));
+        String[] testlist = final24(5, 8, 5, 8);
+        printlnint(testlist.length);
+        printlnstr(Arrays.toString(testlist));
         }
     }

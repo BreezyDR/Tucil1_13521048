@@ -39,13 +39,14 @@ public class utils {
         }
     }
 
-    public static float[] convertToFloat(int a, int b, int c, int d) {
-        float[] arrayfloat = new float[4];
-        arrayfloat[0] = (float) a;
-        arrayfloat[1] = (float) b;
-        arrayfloat[2] = (float) c;
-        arrayfloat[3] = (float) d;
-        return arrayfloat;
+    public static double[] convertTodouble(int a, int b, int c, int d) {
+        // Mengubah angka a, b, c, d menjadi double
+        double[] arraydouble = new double[4];
+        arraydouble[0] = (double) a;
+        arraydouble[1] = (double) b;
+        arraydouble[2] = (double) c;
+        arraydouble[3] = (double) d;
+        return arraydouble;
     }
 
     public static String[] concatStr(String[] list, String a) {
