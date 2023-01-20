@@ -1,5 +1,4 @@
-import java.util.Collections;
-import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -40,22 +39,47 @@ public class utils {
         }
     }
 
-    public static boolean isDivisible(int a, int b) {
-        // Menentukan apakah a habis dibagi dengan b
-        return (a % b == 0);
+    public static float[] convertToFloat(int a, int b, int c, int d) {
+        float[] arrayfloat = new float[4];
+        arrayfloat[0] = (float) a;
+        arrayfloat[1] = (float) b;
+        arrayfloat[2] = (float) c;
+        arrayfloat[3] = (float) d;
+        return arrayfloat;
+    }
+
+    public static String[] concatStr(String[] list, String a) {
+        // Append elemen sebagai index terakhir array
+        String[] new_arr = new String[list.length + 1];
+        for (int i = 0; i < list.length; i++) {
+            new_arr[i] = list[i];
+        }
+        new_arr[new_arr.length - 1] = a;
+        return new_arr;
+        
+    }
+
+    public static String[] mergeArrays(String[] list1, String[] list2) {
+        // Meng-konkat dua buah array
+        String[] newArray = new String[list1.length + list2.length];
+        int index = 0;
+        for (String i : list1) {
+            newArray[index] = i;
+            index++;
+        }
+        for (String i : list2) {
+            newArray[index] = i;
+            index++;
+        }
+        return newArray;
     }
 
     public static int[] RandomNumbers() {
         // Meng-generate angka 1-13 dengan urutan acak dalam sebuah array
-        ArrayList numberlist = new ArrayList();
-        for (int i=0; i < 13; i++) {
-            numberlist.add(i+1);
-        }
-        Collections.shuffle((numberlist));
-        Object[] result = numberlist.toArray();
-        int newlist[] = new int[result.length];
-        for (int i=0; i<13; i++) {
-            newlist[i] = (int) result[i];
+        int[] newlist = new int[4];
+        Random rand = new Random();
+        for (int i=0; i < 4; i++) {
+            newlist[i] = rand.nextInt(1, 13);
         }
         return newlist;
     }
@@ -85,18 +109,6 @@ public class utils {
                 return true;
     }
 
-    public static boolean isUnique(String[] list) {
-        // Menentukan apakah list memiliki elemen-elemen unik (tidak ada elemen duplikat)
-        for (int i = 0; i < list.length; i++) {
-            for (int j = i + 1; j < list.length; j++) {
-                if (!list[i].equals(null) && list[i].equals(list[j])) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     public static int[] manualInput() {
         // Input pilihan kartu manual dari pengguna, output nilai dari kartu tersebut (sudah divalidasi)
         boolean validInput = false;
@@ -110,7 +122,7 @@ public class utils {
             if (inputList.length != 4) {
                 printlnstr("Perlu dimasukkan 4 kartu.");
             } else {
-                if (isSubset(cardSet, inputList) && isUnique(inputList)) {
+                if (isSubset(cardSet, inputList)) {
                     validInput = true;
                 } else {
                     printlnstr("Masukan tidak valid, coba lagi.");
