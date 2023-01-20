@@ -84,14 +84,7 @@ public class utils {
         return newlist;
     }
 
-    public static int[] pickFour(int[] numList) {
-        // Mengambil 4 elemen pertama dalam sebuah list (ambil 4 buah kartu dalam sebuah set)
-        int[] fourCards = new int[4];
-        for (int i=0; i<4; i++) {
-            fourCards[i] = numList[i];
-        }
-        return fourCards;
-    }
+    
 
     public static boolean isSubset(String[] list1, String[] list2) {
         // Menentukan apakah list2 merupakan subset list1
