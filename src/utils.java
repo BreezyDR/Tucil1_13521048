@@ -1,5 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 
 public class utils {
@@ -39,6 +42,24 @@ public class utils {
         }
     }
 
+    public static int pilihanMenu(int i, int j) {
+        // Menerima input pilihan berupa angka dari range i sampai j
+        int input = 0;
+        printlnstr("Ketikkan angka antara " + i + " dan " + j);
+        boolean terusinput = true;
+        Scanner scanner = new Scanner(System.in);
+        while (terusinput) {
+            print("> ");
+            input = scanner.nextInt();
+            if (input >= i && input <= j) {
+                terusinput = false;
+            } else {
+                printlnstr("Input invalid, ketikkan angka antara " + i + " dan " + j);
+            }
+        }
+        return input;
+    }
+
     public static double[] convertTodouble(int a, int b, int c, int d) {
         // Mengubah angka a, b, c, d menjadi double
         double[] arraydouble = new double[4];
@@ -47,6 +68,23 @@ public class utils {
         arraydouble[2] = (double) c;
         arraydouble[3] = (double) d;
         return arraydouble;
+    }
+
+    public static String intToString(int a) {
+        // Mengubah angka 1-13 menjadi kartu yang berkorespondensi dengan nilainya
+        String result = "";
+        if (a == 1) {
+            result = "A";
+        } else if (a == 11) {
+            result = "J";
+        } else if (a == 12) {
+            result = "Q";
+        } else if (a == 13) {
+            result = "K";
+        } else {
+            result = String.valueOf(a);
+        }
+        return result;
     }
 
     public static String[] concatStr(String[] list, String a) {
@@ -111,6 +149,7 @@ public class utils {
         String userInput = "";
         while (!validInput) {
             print("Masukkan pilihan kartu: ");
+            print("> ");
             userInput = sc.nextLine();
             String[] inputList = userInput.split(" ");
             if (inputList.length != 4) {
@@ -167,6 +206,29 @@ public class utils {
                 }
         }
         return resultList;
+    }
+
+    public static boolean writeSolutionToFile(String directory, String[] solutionList, String a, String b, String c, String d) {
+        // Tulis solusi ke File
+        try {
+            FileWriter writer = new FileWriter(directory);
+            writer.write("Kartu: " + a + " " + b + " " + c + " " + d + "\n");
+            if (solutionList.length == 0) {
+                writer.write("Tidak ada solusi.\n");
+            } else {
+                writer.write("Banyak solusi: " + solutionList.length + "\n");
+                for (int i=0; i < solutionList.length; i++) {
+                    writer.write(solutionList[i] + "\n");
+                }
+            }
+            writer.close();
+            printlnstr("Hasil sudah situliskan kepada file.");
+            return true;
+        } catch (IOException e) {
+            // TODO: handle exception
+            printlnstr("Something went wrong. Try again.");
+            return false;
+        }
     }
 
 }
