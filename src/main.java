@@ -52,7 +52,7 @@ public class main extends operation {
             boolean finishedWriting = false;
             if (pilihanfile) {
                 while (!finishedWriting) {
-                    printlnstr("Masukkan directory file yang ingin dituliskan hasilnya:");
+                    printlnstr("Masukkan nama file yang ingin dituliskan hasilnya:");
                     print("> ");
                     Scanner sc = new Scanner(System.in);
                     String directory = sc.next();
