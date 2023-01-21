@@ -1,3 +1,2 @@
-Kartu: K J Q 8
+Kartu: 10 8 9 10
 Tidak ada solusi.
-

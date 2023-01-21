@@ -222,7 +222,7 @@ public class utils {
                 }
             }
             writer.close();
-            printlnstr("Hasil sudah situliskan kepada file.");
+            printlnstr("Hasil sudah dituliskan kepada file.");
             return true;
         } catch (IOException e) {
             // TODO: handle exception

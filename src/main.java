@@ -63,6 +63,8 @@ public class main extends operation {
                 }
             }
 
+            println();
+
             printlnstr("Apakah Anda ingin tetap bermain atau keluar?");
             printlnstr("Ketik 1 untuk tetap bermain, ketik 2 untuk keluar");
             int pilihanlagi = pilihanMenu(1, 2);
