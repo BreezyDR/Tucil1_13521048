@@ -42,22 +42,17 @@ public class utils {
         }
     }
 
-    public static int pilihanMenu(int i, int j) {
-        // Menerima input pilihan berupa angka dari range i sampai j
-        int input = 0;
-        printlnstr("Ketikkan angka antara " + i + " dan " + j);
-        boolean terusinput = true;
+    public static boolean pilihanMenu(String s) {
+        // Menerima input pilihan berupa karakter s
+        String input = "";
         Scanner scanner = new Scanner(System.in);
-        while (terusinput) {
-            print("> ");
-            input = scanner.nextInt();
-            if (input >= i && input <= j) {
-                terusinput = false;
-            } else {
-                printlnstr("Input invalid, ketikkan angka antara " + i + " dan " + j);
-            }
+        print("> ");
+        input = scanner.nextLine();
+        if (input.equals(s)) {
+            return true;
+        } else {
+            return false;
         }
-        return input;
     }
 
     public static double[] convertTodouble(int a, int b, int c, int d) {

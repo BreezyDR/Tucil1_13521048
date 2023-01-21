@@ -10,15 +10,12 @@ public class main extends operation {
             int[] newArray = new int[4];
             println();
             printlnstr("Apakah Anda ingin meng-input angka secara manual atau diacak secara random?");
-            printlnstr("Ketik 1 untuk metode manual, ketik 2 untuk metode auto");
-            int pilihan = pilihanMenu(1, 2);
-            switch (pilihan) {
-                case 1:
-                    newArray = manualInput();
-                    break;
-                case 2:
-                    newArray = RandomNumbers();
-                    break;
+            printlnstr("Press m for manual, press any other key for auto");
+            boolean pilihan = pilihanMenu("m");
+            if (pilihan) {
+                newArray = manualInput();
+            } else {
+                newArray = RandomNumbers();
             }
             String a = intToString(newArray[0]);
             String b = intToString(newArray[1]);
@@ -50,10 +47,10 @@ public class main extends operation {
             println();
 
             printlnstr("Apakah Anda ingin menyimpan file di .txt?");
-            printlnstr("Ketik 1 jika iya, ketik 2 jika tidak");
-            int pilihanfile = pilihanMenu(1, 2);
+            printlnstr("Press y for yes, press any other key for no");
+            boolean pilihanfile = pilihanMenu("y");
             boolean finishedWriting = false;
-            if (pilihanfile == 1) {
+            if (pilihanfile) {
                 while (!finishedWriting) {
                     printlnstr("Masukkan directory file yang ingin dituliskan hasilnya:");
                     print("> ");
@@ -66,9 +63,9 @@ public class main extends operation {
             println();
 
             printlnstr("Apakah Anda ingin tetap bermain atau keluar?");
-            printlnstr("Ketik 1 untuk tetap bermain, ketik 2 untuk keluar");
-            int pilihanlagi = pilihanMenu(1, 2);
-            if (pilihanlagi == 2) {
+            printlnstr("Press y if you want to stay, press any other key if you want to quit");
+            boolean pilihanlagi = pilihanMenu("y");
+            if (pilihanlagi == false) {
                 printlnstr("==============================================================================");
                 printlnstr("Terima kasih sudah bermain, sampai jumpa lagi!");
                 printlnstr("==============================================================================");
